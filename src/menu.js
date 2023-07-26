@@ -1,10 +1,17 @@
+const imagesMap = {
+    special: require('./images/special.jpg'),
+    chicken: require('./images/chicken.jpg'),
+    steak: require('./images/steak.jpg'),
+    pizza: require('./images/pizza.jpg'),
+};
+
 function menuPage(){
     const section = document.createElement('section');
     section.classList.add('menu');
 
     section.appendChild(
         createMenuItem(
-            "Special-Pizza",
+            "Pizza",
             "Every slice delivers a delightful blend of gooey cheese, fresh toppings, and \
             a sauce bursting with flavors, making it an unforgettable pizza experience."
         )
@@ -12,7 +19,7 @@ function menuPage(){
 
     section.appendChild(
         createMenuItem(
-            "Grilled-Chicken",
+            "Chicken",
             "Prepared with the finest herbs and spices, our perfectly grilled chicken \
             promises a delectable and wholesome experience that will leave you craving for more."
         )
@@ -20,7 +27,7 @@ function menuPage(){
 
     section.appendChild(
         createMenuItem(
-            "Chefs-Special",
+            "Special",
             "This exquisite creation changes regularly, showcasing the finest seasonal \
             ingredients and culinary expertise, ensuring a unique and delightful culinary \
             journey with every visit."
@@ -29,7 +36,7 @@ function menuPage(){
 
     section.appendChild(
         createMenuItem(
-            "Rare-Steak",
+            "Steak",
             "Grilled to perfection and served with your choice of delectable sauces, this \
             premium cut of meat is a true celebration of tenderness and robust flavors."
         )
@@ -51,7 +58,8 @@ const createMenuItem = (name, description) =>{
     itemDescription.textContent = description;
 
     const itemImage = document.createElement('img');
-    itemImage.src = `/src/images/${name.toLowerCase()}.jpg`;
+    itemImage.src = imagesMap[name.toLowerCase()];
+    // itemImage.src = `/src/images/${name.toLowerCase()}.jpg`;
     itemImage.alt = `Image of ${name}`;
 
     div.appendChild(itemName);
