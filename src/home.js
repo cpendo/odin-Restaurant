@@ -1,3 +1,5 @@
+import chefImage from './images/image-chef.jpg'
+
 function homePage(){
     const section = document.createElement('section');
     section.classList.add('home');
@@ -15,7 +17,7 @@ function createImageDiv(){
     const image = document.createElement('img');
     const figCaption = document.createElement('figcaption');
 
-    image.src = "/src/images/image-chef.jpg";
+    image.src = chefImage;
     image.alt = "Photo of a Chef";
     figCaption.textContent = "Image of Main Chef";
 
